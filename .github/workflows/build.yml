@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: ['master'] 
+    branches: 
   repository_dispatch:
   pull_request:
 
