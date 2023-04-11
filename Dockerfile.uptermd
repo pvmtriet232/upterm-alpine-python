@@ -6,7 +6,7 @@ ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
 RUN go install ./cmd/uptermd/...
 
 # Prepare for image
-FROM alpine:latest
+FROM python:3.9.16-alpine
 
 MAINTAINER Owen Ou
 LABEL org.opencontainers.image.source https://github.com/owenthereal/upterm
