@@ -7,7 +7,7 @@ jobs:
   release:
     name: Upload releases
     runs-on: ubuntu-latest
-    if: '!contains(github.ref, "-")' # skip prereleases
+    if: "!contains(github.ref, '-')" # skip prereleases
     steps:
       - name: Checkout
         uses: actions/checkout@v2
