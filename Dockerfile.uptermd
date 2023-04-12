@@ -8,7 +8,6 @@ RUN go install ./cmd/uptermd/...
 # Prepare for image
 FROM python:3.9.16-alpine
 
-MAINTAINER Owen Ou
 LABEL org.opencontainers.image.source https://github.com/owenthereal/upterm
 
 RUN adduser -D uptermd
