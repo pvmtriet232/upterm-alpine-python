@@ -1,0 +1,22 @@
+name: install
+
+on:
+  push: 
+    branches: ['master']
+  repository_dispatch:
+  pull_request:
+
+
+jobs:
+    install-arkade:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: alexellis/setup-arkade@v1
+            - uses: alexellis/arkade-get@master
+              with:
+                kubectl: latest
+                kustomize: latest
+                kubeconform: latest
+                helm: latest
+                jq: latest
+                yq: latest
