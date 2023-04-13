@@ -56,3 +56,5 @@ jobs:
                 git --version
                 git remote -v
                 ls
+                krew version
+                kubectl krew
