@@ -20,3 +20,10 @@ jobs:
                 helm: latest
                 jq: latest
                 yq: latest
+            - run: |
+                kubectl version --client
+                kustomize version
+                kubeconform -v
+                helm version
+                jq --version
+                yq --version
