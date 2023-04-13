@@ -25,7 +25,7 @@ jobs:
                   tar zxvf "${KREW}.tar.gz" &&
                   ./"${KREW}" install krew
                 )
-                ./krew version
+                echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc
             # - name: install krew binary
             #   uses: giantswarm/install-binary-action@v1
             #   with:
@@ -53,5 +53,5 @@ jobs:
                 yq --version
                 git --version
                 git remote -v
-                ls
+                kubectl krew
 
