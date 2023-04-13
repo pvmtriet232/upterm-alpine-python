@@ -26,6 +26,7 @@ jobs:
                   ./"${KREW}" install krew
                 )
                 echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc
+                krew version
             # - name: install krew binary
             #   uses: giantswarm/install-binary-action@v1
             #   with:
@@ -53,5 +54,4 @@ jobs:
                 yq --version
                 git --version
                 git remote -v
-                kubectl krew
 
