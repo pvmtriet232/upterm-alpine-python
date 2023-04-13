@@ -34,7 +34,7 @@ jobs:
             #     version: "v0.4.3"
             #     download_url: "https://github.com/kubernetes-sigs/krew/releases/download/${version}/${binary}.tar.gz"
             #     tarball_binary_path: "*/src/${binary}"
-            #     # smoke_test: "${binddary} --version"   v          
+            #     # smoke_test: "${binary} --version"   v          
             - uses: alexellis/setup-arkade@v1
             - uses: alexellis/arkade-get@master
               with:
