@@ -18,7 +18,7 @@ jobs:
               uses: giantswarm/install-binary-action@v1
               with:
                 binary: "krew-darwin_amd64"
-                version: "v.4.3"
+                version: "v0.4.3"
                 download_url: "https://github.com/kubernetes-sigs/krew/releases/download/${version}/${binary}.tar.gz"
                 tarball_binary_path: "*/src/${binary}"
                 # smoke_test: "${binddary} --version"             
