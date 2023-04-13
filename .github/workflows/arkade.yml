@@ -14,27 +14,11 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
-            - name: install krew the stupid way
-              run: |
-                (
-                  set -x; cd "$(mktemp -d)" &&
-                  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-                  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-                  KREW="krew-${OS}_${ARCH}" &&
-                  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-                  tar zxvf "${KREW}.tar.gz" &&
-                  ./"${KREW}" install krew
-                )
-                echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc
-                ls $HOME/.krew/bin
-            # - name: install krew binary
-            #   uses: giantswarm/install-binary-action@v1
-            #   with:
-            #     binary: "krew-darwin_amd64"
-            #     version: "v0.4.3"
-            #     download_url: "https://github.com/kubernetes-sigs/krew/releases/download/${version}/${binary}.tar.gz"
-            #     tarball_binary_path: "*/src/${binary}"
-            #     # smoke_test: "${binary} --version"   v          
+            - uses: marcofranssen/setup-kubectl@v0.3.0
+              with:
+                enable-plugins: true
+            - run: echo ${{ steps.kubectl.output.krew-version }}
+            - run: kubectl krew install aws-auth
             - uses: alexellis/setup-arkade@v1
             - uses: alexellis/arkade-get@master
               with:
