@@ -14,8 +14,6 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
-            - run: |
-                ls
                 
             - uses: alexellis/setup-arkade@v1
             - uses: alexellis/arkade-get@master
@@ -26,11 +24,12 @@ jobs:
                 helm: latest
                 jq: latest
                 yq: latest
-            - run: |
+            - name: run test
+              run: |
                 kubectl version --client
                 kustomize version
                 kubeconform -v
                 helm version
                 jq --version
                 yq --version
-                ls -la
+                ls 
