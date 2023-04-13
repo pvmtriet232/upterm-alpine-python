@@ -2,7 +2,7 @@ name: install
 
 on:
   push: 
-    branches: ['master']
+    branches: ['test']
   repository_dispatch:
   pull_request:
     branches : ['master']
