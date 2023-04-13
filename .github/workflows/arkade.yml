@@ -11,6 +11,11 @@ jobs:
     install-arkade:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+            - run: |
+                ls
+                
             - uses: alexellis/setup-arkade@v1
             - uses: alexellis/arkade-get@master
               with:
