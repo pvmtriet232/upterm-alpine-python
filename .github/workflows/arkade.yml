@@ -33,3 +33,4 @@ jobs:
                 jq --version
                 yq --version
                 ls 
+                git --version
