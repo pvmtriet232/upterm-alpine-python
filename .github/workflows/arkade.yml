@@ -14,18 +14,14 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
-            - name: install krew
-              run: |
-                (
-                  set -x; cd "$(mktemp -d)" &&
-                  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-                  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-                  KREW="krew-${OS}_${ARCH}" &&
-                  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-                  tar zxvf "${KREW}.tar.gz" &&
-                  ./"${KREW}" install krew
-                )
-                echo "export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"" >> $HOME/.bashrc
+            - name: install krew binary
+              uses: giantswarm/install-binary-action@VERSION
+              with:
+                binary: "krew-darwin_amd64"
+                version: "v.4.3"
+                download_url: "https://github.com/kubernetes-sigs/krew/releases/download/${version}/${binary}.tar.gz"
+                tarball_binary_path: "*/src/${binary}"
+                smoke_test: "${binary} --version"             
             - uses: alexellis/setup-arkade@v1
             - uses: alexellis/arkade-get@master
               with:
