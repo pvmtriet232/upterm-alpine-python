@@ -35,4 +35,4 @@ jobs:
                 ls 
                 git --version
                 git remote -v
-                kubectl get pods
+                
