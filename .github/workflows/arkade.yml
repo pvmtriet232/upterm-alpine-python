@@ -15,7 +15,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v3
             - name: install krew binary
-              uses: giantswarm/install-binary-action@VERSION
+              uses: giantswarm/install-binary-action@v1
               with:
                 binary: "krew-darwin_amd64"
                 version: "v.4.3"
