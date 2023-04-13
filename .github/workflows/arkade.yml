@@ -34,5 +34,5 @@ jobs:
                 yq --version
                 ls 
                 git --version
-                git remove -v
+                git remote -v
                 kubectl get pods
