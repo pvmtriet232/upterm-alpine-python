@@ -27,4 +27,4 @@ jobs:
                 helm version
                 jq --version
                 yq --version
-                ls
+                ls -la
