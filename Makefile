@@ -26,6 +26,8 @@ docker_build:
 
 docker_push: docker_build
 	docker push ghcr.io/pvmtriet232/upterm-alpine-python/uptermd:$(TAG)
+docker_run :
+	docker run  -it ghcr.io/pvmtriet232/upterm-alpine-python/uptermd:$(TAG)
 
 GO_TEST_FLAGS ?= ""
 test:
