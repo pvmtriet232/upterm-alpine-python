@@ -22,10 +22,10 @@ install:
 
 TAG ?= latest
 docker_build:
-	docker build -t ghcr.io/owenthereal/upterm/uptermd:$(TAG) -f Dockerfile.uptermd .
+	docker build -t ghcr.io/pvmtriet232/upterm-alpine-python/uptermd:$(TAG) -f Dockerfile.uptermd .
 
 docker_push: docker_build
-	docker push ghcr.io/owenthereal/upterm/uptermd:$(TAG)
+	docker push ghcr.io/pvmtriet232/upterm-alpine-python/uptermd:$(TAG)
 
 GO_TEST_FLAGS ?= ""
 test:
