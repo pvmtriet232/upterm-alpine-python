@@ -1,4 +1,4 @@
-FROM golang:alpine:3 as builder
+FROM golang:alpine as builder
 
 WORKDIR $GOPATH/src/github.com/owenthereal/upterm
 COPY . .
