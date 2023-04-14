@@ -22,7 +22,7 @@ jobs:
           # Build image follow by Makefile.docker_build
           make docker_build
           # Test image
-          docker images
+          make docker_run
   # build:
   #   name: Compile
   #   runs-on: ${{ matrix.os  }}
