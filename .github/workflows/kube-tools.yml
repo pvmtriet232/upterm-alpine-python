@@ -40,4 +40,4 @@ jobs:
                 jq --version
                 yq --version
                 kubectl krew
-                /kind create cluster
+                kind create cluster
