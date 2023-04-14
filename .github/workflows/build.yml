@@ -9,9 +9,7 @@ on:
 jobs:
   build-and-test:  
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        alpine-version: [3.10, 3.10, 3.12]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,16 +18,11 @@ jobs:
         with:
           go-version: ^1.19
       - name: build and test
-        env:
-          AlPINE_VERSION: ${{ matrix.alpine-version}}
         run: |
-          # Install go binary
-          make install
-          # Build Docker image
-          docker build -t upterm:${ALPINE_VERSION} --build-arg ALPINE_VERSION=${ALPINE_VERSION} .
-          # Run Docker container
-          docker run -it upterm:${ALPINE_VERSION}
-  
+          # Build image follow by Makefile.docker_build
+          make docker_build
+          # Test image
+          docker run -it uptermd:latest
   # build:
   #   name: Compile
   #   runs-on: ${{ matrix.os  }}
