@@ -19,7 +19,7 @@ jobs:
       with:
         go-version: ^1.19
       id: go
-    - name: Check out code into the Go module directoryS
+    - name: Check out code into the Go module directory
       uses: actions/checkout@v2
     - name: Compile
       run: make install
