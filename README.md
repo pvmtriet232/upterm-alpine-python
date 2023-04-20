@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pvmtriet232/upterm-ubuntu-python/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-Apache%202.0-yellow)](https://github.com/pvmtriet232/upterm-ubuntu-python/blob/master/LICENSE)
 # If you find this helpful
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/pvmtriet232)
 
